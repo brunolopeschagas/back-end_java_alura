@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ProductApiApplication",
+            "request": "launch",
+            "mainClass": "br.com.brunochagas.productapi.ProductApiApplication",
+            "projectName": "product-api"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-UserapiApplication<userapi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.brunochagas.userapi.userapi.UserapiApplication",
+            "projectName": "userapi",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
