@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ShoppingApiApplication",
+            "request": "launch",
+            "mainClass": "br.com.shopping.shoppingapi.ShoppingApiApplication",
+            "projectName": "shopping-api"
+        },
+        {
+            "type": "java",
             "name": "ProductApiApplication",
             "request": "launch",
             "mainClass": "br.com.brunochagas.productapi.ProductApiApplication",
