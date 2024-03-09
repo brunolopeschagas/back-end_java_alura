@@ -58,6 +58,8 @@ public class ProductService {
         }
         if (dto.getPreco() != null) {
             product.setPreco(dto.getPreco());
+        }if(dto.getCategory() != null){
+            product.setCategory(Category.convert(dto.getCategory()));
         }
 
         return ProductDTO.convert(productRepository.save(product));

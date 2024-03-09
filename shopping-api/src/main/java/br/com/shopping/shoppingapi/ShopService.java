@@ -16,17 +16,17 @@ public class ShopService {
 
     public List<ShopDTO> getAll() {
         List<Shop> shops = shopRepository.findAll();
-        return extracted(shops);
+        return getShopsDTO(shops);
     }
 
     public List<ShopDTO> getByUser(String userIdentifier) {
         List<Shop> shops = shopRepository.findAllByUserIdentifier(userIdentifier);
-        return extracted(shops);
+        return getShopsDTO(shops);
     }
 
     public List<ShopDTO> getByDate(ShopDTO shopDTO) {
         List<Shop> shops = shopRepository.findAllByDateGreaterThan(shopDTO.getDate());
-        return extracted(shops);
+        return getShopsDTO(shops);
     }
 
     public ShopDTO findById(long ProductId) {
@@ -50,7 +50,7 @@ public class ShopService {
         return ShopDTO.convert(shop);
     }
 
-    private List<ShopDTO> extracted(List<Shop> shops) {
+    private List<ShopDTO> getShopsDTO(List<Shop> shops) {
         return shops
                 .stream()
                 .map(ShopDTO::convert)
