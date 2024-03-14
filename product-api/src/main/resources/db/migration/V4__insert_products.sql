@@ -1,0 +1,3 @@
+INSERT INTO products.product (product_identifier, nome, descricao, preco, category_id) VALUES ('MSA','Mouse', 'Aparelho em formato de rato', 15.99, 1);
+INSERT INTO products.product (product_identifier, nome, descricao, preco, category_id) VALUES ('RMR','Armário', 'Armário com 4 gavetas', 1000, 2);
+INSERT INTO products.product (product_identifier, nome, descricao, preco, category_id) VALUES ('CRRNH','Carrinho', 'Carrinho de controle paraguai', 1.99, 3);

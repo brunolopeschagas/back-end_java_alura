@@ -1,0 +1,1 @@
+INSERT INTO users.user (nome, cpf, endereco, email, telefone, data_cadastro) VALUES ('Administrador', '99999999999','Rua Xuxa Melandriel', 'adm@adm.com.br', '32 3531-2525', now());

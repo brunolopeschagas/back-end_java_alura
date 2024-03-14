@@ -12,5 +12,5 @@ import lombok.Setter;
 public class ShopReportDTO {
     private Integer count;
     private Double total;
-    privaet Double mean;
+    private Double mean;
 }
