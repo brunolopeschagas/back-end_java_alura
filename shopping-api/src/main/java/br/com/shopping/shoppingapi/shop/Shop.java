@@ -1,9 +1,10 @@
-package br.com.shopping.shoppingapi;
+package br.com.shopping.shoppingapi.shop;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import br.com.shopping.shoppingapi.item.Item;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;

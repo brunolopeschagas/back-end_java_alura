@@ -1,4 +1,4 @@
-package br.com.shopping.shoppingapi;
+package br.com.shopping.shoppingapi.report;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

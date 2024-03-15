@@ -1,4 +1,4 @@
-package br.com.shopping.shoppingapi;
+package br.com.shopping.shoppingapi.shop;
 
 import java.util.List;
 

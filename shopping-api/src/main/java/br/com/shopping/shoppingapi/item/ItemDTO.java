@@ -1,4 +1,4 @@
-package br.com.shopping.shoppingapi;
+package br.com.shopping.shoppingapi.item;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

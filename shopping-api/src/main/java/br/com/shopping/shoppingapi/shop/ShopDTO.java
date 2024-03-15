@@ -1,8 +1,9 @@
-package br.com.shopping.shoppingapi;
+package br.com.shopping.shoppingapi.shop;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+import br.com.shopping.shoppingapi.item.ItemDTO;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

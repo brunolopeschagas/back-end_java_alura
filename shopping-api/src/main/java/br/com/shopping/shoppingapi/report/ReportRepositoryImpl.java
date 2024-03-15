@@ -1,9 +1,10 @@
-package br.com.shopping.shoppingapi;
+package br.com.shopping.shoppingapi.report;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.List;
 
+import br.com.shopping.shoppingapi.shop.Shop;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;

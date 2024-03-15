@@ -1,7 +1,9 @@
-package br.com.shopping.shoppingapi;
+package br.com.shopping.shoppingapi.shop;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import br.com.shopping.shoppingapi.report.ReportRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
