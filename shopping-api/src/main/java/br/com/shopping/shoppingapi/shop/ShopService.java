@@ -1,5 +1,6 @@
 package br.com.shopping.shoppingapi.shop;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +8,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import br.com.shopping.shoppingapi.report.ShopReportDTO;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -55,5 +57,22 @@ public class ShopService {
                 .stream()
                 .map(ShopDTO::convert)
                 .collect(Collectors.toList());
+    }
+
+     public List<ShopDTO> getShopsByFilter(
+            LocalDate dataInicio,
+            LocalDate dataFim,
+            Float valorMinimo) {
+        List<Shop> shops = shopRepository.getShopByFilters(dataInicio, dataFim, valorMinimo);
+        return shops
+                .stream()
+                .map(ShopDTO::convert)
+                .collect(Collectors.toList());
+    }
+
+    public ShopReportDTO getReportByDate(LocalDate dataInicio,
+            LocalDate dataFim) {
+        return shopRepository.getReportByDate(dataInicio, dataFim);
+
     }
 }
