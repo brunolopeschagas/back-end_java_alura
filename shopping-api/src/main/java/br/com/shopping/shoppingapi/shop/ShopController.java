@@ -51,10 +51,6 @@ public class ShopController {
     }
 
     @GetMapping("/shopping/search")
-    public String getMethodName(@RequestParam String param) {
-        return new String();
-    }
-
     public List<ShopDTO> getShopsByFilter(
             @RequestParam(name = "dataInicio", required = true) @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDate dataInicio,
             @RequestParam(name = "dataFim", required = false) @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDate dataFim,

@@ -27,7 +27,7 @@ public class ReportRepositoryImpl implements ReportRepository {
         }
 
         if (valorMinimo != null) {
-            sb.append("and s.total <= :valorMinimo");
+            sb.append("and s.total >= :valorMinimo");
         }
 
         Query query = entityManager.createQuery(sb.toString());
