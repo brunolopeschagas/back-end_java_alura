@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ShopReportDTO {
-    private Integer count;
+    private Long count;
     private Double total;
     private Double mean;
 }

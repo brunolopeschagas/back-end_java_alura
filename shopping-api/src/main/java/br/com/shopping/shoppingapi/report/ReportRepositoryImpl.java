@@ -49,8 +49,8 @@ public class ReportRepositoryImpl implements ReportRepository {
         StringBuilder sb = new StringBuilder();
         sb.append("SELECT COUNT(sp.id), SUM(sp.total), AVG(sp.total) ");
         sb.append("FROM shopping.shop sp ");
-        sb.append("WHERE sp.data >= :dataInicio ");
-        sb.append("AND sp.data <= :dataFim");
+        sb.append("WHERE sp.date >= :dataInicio ");
+        sb.append("AND sp.date <= :dataFim");
 
         Query query = entityManager.createNativeQuery(sb.toString());
         query.setParameter("dataInicio", dataInicio.atTime(0, 0));
@@ -58,7 +58,7 @@ public class ReportRepositoryImpl implements ReportRepository {
 
         Object[] result = (Object[]) query.getSingleResult();
         ShopReportDTO shopReportDTO = new ShopReportDTO();
-        shopReportDTO.setCount(((BigInteger) result[0]).intValue());
+        shopReportDTO.setCount(((Long) result[0]).longValue());
         shopReportDTO.setTotal((Double) result[1]);
         shopReportDTO.setMean((Double) result[2]);
         return shopReportDTO;
