@@ -20,32 +20,32 @@ public class UserService {
         List<User> usuarios = userRepository.findAll();
         return usuarios
                 .stream()
-                .map(UserDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
     public UserDTO findById(long userId) {
         User usuario = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
-        return UserDTO.convert(usuario);
+        return DTOConverter.convert(usuario);
     }
 
     public UserDTO save(UserDTO userDTO) {
         userDTO.setDadaCadastro(LocalDateTime.now());
         User user = userRepository.save(User.convert(userDTO));
-        return UserDTO.convert(user);
+        return DTOConverter.convert(user);
     }
 
     public UserDTO delete(long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException());
         userRepository.delete(user);
-        return UserDTO.convert(user);
+        return DTOConverter.convert(user);
     }
 
     public UserDTO findByCpf(String cpf) {
         User user = userRepository.findByCpf(cpf);
         if (user != null) {
-            return UserDTO.convert(user);
+            return DTOConverter.convert(user);
         }
         return null;
     }
@@ -54,7 +54,7 @@ public class UserService {
         List<User> usuarios = userRepository.queryByNomeLike(name);
         return usuarios
                 .stream()
-                .map(UserDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
@@ -74,13 +74,13 @@ public class UserService {
         }
 
         user = userRepository.save(user);
-        return UserDTO.convert(user);
+        return DTOConverter.convert(user);
     }
 
     public Page<UserDTO> getAllPage(Pageable page) {
         Page<User> users = userRepository.findAll(page);
         return users
-                .map(UserDTO::convert);
+                .map(DTOConverter::convert);
     }
 
 }

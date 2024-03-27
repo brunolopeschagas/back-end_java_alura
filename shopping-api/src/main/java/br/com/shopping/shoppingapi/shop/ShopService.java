@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import br.com.shopping.DTOConverter;
 import br.com.shopping.shoppingapi.report.ShopReportDTO;
 import lombok.RequiredArgsConstructor;
 
@@ -34,7 +35,7 @@ public class ShopService {
     public ShopDTO findById(long ProductId) {
         Optional<Shop> shop = shopRepository.findById(ProductId);
         if (shop.isPresent()) {
-            return ShopDTO.convert(shop.get());
+            return DTOConverter.convert(shop.get());
         }
         return null;
     }
@@ -49,13 +50,13 @@ public class ShopService {
         Shop shop = Shop.convert(shopDTO);
         shop.setDate(LocalDateTime.now());
         shop = shopRepository.save(shop);
-        return ShopDTO.convert(shop);
+        return DTOConverter.convert(shop);
     }
 
     private List<ShopDTO> getShopsDTO(List<Shop> shops) {
         return shops
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
@@ -66,7 +67,7 @@ public class ShopService {
         List<Shop> shops = shopRepository.getShopByFilters(dataInicio, dataFim, valorMinimo);
         return shops
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 

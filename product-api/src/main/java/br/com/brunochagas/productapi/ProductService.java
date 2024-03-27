@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import br.com.brunochagas.DTOConverter;
 import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
@@ -19,7 +20,7 @@ public class ProductService {
         List<Product> products = productRepository.findAll();
         return products
                 .stream()
-                .map(ProductDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
@@ -27,21 +28,21 @@ public class ProductService {
         List<Product> products = productRepository.getProductByCategory(categoryId);
         return products
                 .stream()
-                .map(ProductDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
     public ProductDTO findByProductIdentifier(String productIdenfier) {
         Product product = productRepository.findByProductIdentifier(productIdenfier);
         if (product != null) {
-            return ProductDTO.convert(product);
+            return DTOConverter.convert(product);
         }
         return null;
     }
 
     public ProductDTO save(ProductDTO productDTO) {
         Product product = productRepository.save(Product.convert(productDTO));
-        return ProductDTO.convert(product);
+        return DTOConverter.convert(product);
     }
 
     public void delete(long productId) {
@@ -62,12 +63,12 @@ public class ProductService {
             product.setCategory(Category.convert(dto.getCategory()));
         }
 
-        return ProductDTO.convert(productRepository.save(product));
+        return DTOConverter.convert(productRepository.save(product));
     }
 
     public Page<ProductDTO> getAllPage(Pageable page){
         Page<Product> products = productRepository.findAll(page);
-        return products.map(ProductDTO::convert);
+        return products.map(DTOConverter::convert);
     }
 
 }

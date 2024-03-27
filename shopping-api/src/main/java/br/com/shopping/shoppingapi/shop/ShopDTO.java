@@ -25,11 +25,4 @@ public class ShopDTO {
     @NotNull
     private List<ItemDTO> items;
 
-    public static ShopDTO convert(Shop shop){
-        ShopDTO shopDTO = new ShopDTO();
-        shopDTO.setUserIdentifier(shop.getUserIdentifier());
-        shopDTO.setTotal(shop.getTotal());
-        shopDTO.setDate(shop.getDate());
-        return shopDTO;
-    }
 }

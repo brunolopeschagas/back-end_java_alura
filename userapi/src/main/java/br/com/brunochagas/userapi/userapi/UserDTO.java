@@ -24,19 +24,4 @@ public class UserDTO {
     private String telefone;
     private LocalDateTime dadaCadastro;
 
-    public static UserDTO convert(User user){
-        UserDTO userDTO = new UserDTO(user.getNome(), user.getCpf(), user.getEndereco(), user.getEmail(), user.getTelefone(), user.getDataCadastro());
-        return userDTO;
-    }
-
-    public static UserDTO convert(UserDTO user){
-        UserDTO userDTO = new UserDTO();
-        userDTO.setNome(user.getNome());
-        userDTO.setEndereço(user.getEndereço());
-        userDTO.setCpf(user.getCpf());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setTelefone(user.getTelefone());
-        userDTO.setDadaCadastro(user.getDadaCadastro());
-        return userDTO;
-    }
 }

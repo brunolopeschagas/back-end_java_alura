@@ -18,7 +18,4 @@ public class ItemDTO {
     @NotNull
     private Float price;
 
-    public static ItemDTO convert(Item item){
-        return new ItemDTO(item.getProductIdentifier(), item.getPrice());
-    }
 }
