@@ -1,4 +1,4 @@
-package br.com.shopping;
+package br.com.shopping.DTOs;
 
 import br.com.shopping.shoppingapi.item.Item;
 import br.com.shopping.shoppingapi.item.ItemDTO;

@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import br.com.shopping.DTOConverter;
+import br.com.shopping.DTOs.DTOConverter;
 import br.com.shopping.shoppingapi.report.ShopReportDTO;
 import lombok.RequiredArgsConstructor;
 
